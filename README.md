@@ -1,1 +1,3 @@
-# My Project
+On May 3, 2025, during our Software Construction (SC) class with Ma’am Dr. Onaiza Maqbool, we were presented with use case on managing events. This assignment is crucial as it bridges theoretical requirements elicitation with practical software design and programming.
+
+The provided use case specifies various functionalities such as viewing event feeds, rating events, and ensuring that only validated event updates (uploaded by the Admin) are displayed. It clearly defines primary actors (Students and Teachers), stakeholders’ interests, preconditions (such as user authentication and the availability of event updates), postconditions, and both alternate and exception flows.
