@@ -1,0 +1,107 @@
+@startuml
+left to right direction
+
+actor "Student" as Student #559afd
+actor "Teacher" as Teacher #FFC300
+actor "Admin" as Admin #900C3F
+
+rectangle "<size:20><font:Arial>Student Event Management System</font></size>" {
+
+    usecase "Login" as UC_Login
+    usecase "Sign Up" as UC_SignUp
+
+    usecase "Manage Event" as UC_ManageEvent
+
+    usecase "Create Event" as UC_CreateEvent
+    usecase "Edit Event" as UC_EditEvent
+    usecase "Delete Event" as UC_DeleteEvent
+    usecase "Set Requirement" as UC_SetReq
+
+    UC_ManageEvent <.[#6eff33]. UC_CreateEvent : <<extend>>
+    UC_ManageEvent <.[#6eff33]. UC_EditEvent : <<extend>>
+    UC_ManageEvent <.[#6eff33]. UC_DeleteEvent : <<extend>>
+    UC_ManageEvent .[#ff5733].> UC_SetReq : <<include>>
+
+    usecase "Register for Event" as UC_Register
+    usecase "View Registration" as UC_ViewReg 
+    usecase "Cancel Registration" as UC_CancelReg
+
+    UC_Register <.[#6eff33]. UC_ViewReg : <<extend>>
+    UC_ViewReg <.[#6eff33]. UC_CancelReg : <<extend>>
+
+    usecase "Conclude Event" as UC_EventComp
+    usecase "Post News" as UC_UploadNews
+    usecase "Upload Photos" as UC_UploadImg
+    usecase "Rate Event" as UC_Rate
+    usecase "See Feed" as UC_Feed
+
+    UC_EventComp <.[#6eff33]. UC_UploadNews : <<extend>>
+    UC_EventComp <.[#6eff33]. UC_UploadImg : <<extend>>
+
+    UC_Feed <.[#6eff33]. UC_Rate : <<extend>>
+
+}
+
+Student -[#559afd]- UC_Login
+Student -[#559afd]- UC_SignUp
+Student -[#559afd]- UC_Register
+Student -[#559afd]- UC_Feed
+Student -[#559afd]- UC_Feed
+
+Student -[#559afd]- UC_Feed
+Teacher -[#FFC300]- UC_Login
+Teacher -[#FFC300]- UC_SignUp
+Teacher -[#FFC300]- UC_Feed
+
+UC_Login -[#900C3F]- Admin
+UC_ManageEvent -[#900C3F]- Admin
+UC_EventComp -[#900C3F]- Admin
+
+note left of UC_Login
+All users must login 
+before using the application, 
+don't need to sign up everytime. 
+end note
+
+note bottom of UC_SignUp
+All users must sign up 
+before using the application 
+end note
+
+note bottom of UC_ViewReg
+Students can view their 
+registration (successful or not)
+and can cancel 
+end note
+
+note right of UC_ManageEvent
+Admin controls all event 
+management operations, 
+it will work as university 
+or external entity 
+end note
+
+note bottom of UC_SetReq
+Requirements must be set 
+for every event
+end note
+
+note left of UC_Register
+Students can 
+register for events
+end note
+
+note bottom of UC_EventComp
+Admin can upload pictures and 
+post news of events
+end note
+
+note left of UC_Feed
+Users can view feed
+and rate the events
+end note
+
+note "Extend = Optional functionality" as N1
+note "Include = Required functionality" as N2
+
+@enduml
