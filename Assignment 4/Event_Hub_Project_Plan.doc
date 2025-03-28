@@ -1,0 +1,259 @@
+﻿Event Hub: Project Plan and Functional Requirements
+=====================================================
+
+Version: 1.0
+Date: 2nd March 2025
+Group: Group 15, Case Study 05
+Presented by:
+  - Ahmad Masood (Leader)
+  - M. Ahmad Hassan
+  - M. Waleed
+  - Talha Wains
+Supervised by:
+  - Dr. Onaiza Maqbool, Professor, QAU Islamabad
+
+-----------------------------------------------------
+
+1. Project Overview
+--------------------
+
+1.1 Project Summary
+-------------------
+The department aims to create an Event Management System (EMS) named "Event Hub". This system will promote, manage, and document both departmental and external events by streamlining registration, event monitoring, and post-event feedback. The system is intended to be efficient and user-friendly, enhancing student participation and ensuring comprehensive record-keeping for future planning.
+
+1.2 Purpose, Scope, and Objectives
+------------------------------------
+Purpose:
+  To design an efficient, automated system that manages event registration, monitoring, and feedback, thereby ensuring a smooth and engaging experience for students, faculty, and event organizers.
+
+Scope:
+  Context:
+    A standalone system managing event registration and the scheduling of student participation.
+  Functional Requirements:
+    - Event Management: Allows external organizers and departments to create, edit, and promote events.
+    - Student Registration: Enables eligible students to register for events.
+    - Post-Event Updates: Facilitates the upload of photos, news, and key outcomes after events are completed.
+    - Feedback and Rating: Provides mechanisms for students and teachers to rate and review events.
+    - User Administration: Implements role-based access control for admins, faculty, and students.
+    - Notification System: Issues automated alerts for upcoming events.
+
+Objectives:
+  - Create a centralized system to track and manage departmental events.
+  - Allow students to easily register and access event details.
+  - Support secure access with appropriate permissions based on user roles.
+  - Facilitate continuous improvement through feedback and ratings from users.
+  - Ensure that the system is scalable and maintains data security during high concurrency periods.
+
+1.3 Assumptions and Constraints
+---------------------------------
+Constraints:
+  - The software is built using Java.
+  - User authentication is mandatory for registration and feedback submission.
+  - The system must handle high concurrent users during event registration.
+  - The project is to be completed within the semester timeline.
+
+Assumptions:
+  - Access to the system is limited to departmental students and staff.
+  - Events have predefined eligibility criteria (e.g., department, year, batch).
+  - The EMS supports image uploads and post-event feedback.
+
+1.4 Project Deliverables
+------------------------
+- Event Management System (EMS): A fully functional web-based application.
+- User Interface (UI): An intuitive, responsive interface for all user roles.
+- Database Schema: A structured database to store event and user data.
+- Post-Event Features: Capabilities for image uploads, event ratings, and feedback submission.
+- Documentation: Comprehensive user manual, system design document, and test reports.
+
+1.5 Schedule Summary
+--------------------
+The project is divided into several phases:
+  1. Requirement Gathering & Planning: Completed
+  2. Analysis: 2 weeks
+  3. Coding: 4 weeks
+  4. Testing: 3 weeks
+  5. Deployment: 2 weeks
+
+-----------------------------------------------------
+
+2. Project Context and Methodology
+------------------------------------
+
+2.1 Process Model
+-----------------
+An Agile methodology is employed to accommodate evolving requirements and ensure early delivery. Continuous feedback from students and faculty will be integrated into iterative development cycles. This approach ensures:
+  - Flexibility: Adapting to changes in requirements.
+  - Early Delivery: Deploying usable features quickly.
+  - User Involvement: Refining the system through ongoing feedback.
+  - Higher Quality: Reducing errors through frequent testing.
+
+2.2 Methods, Tools, and Techniques
+------------------------------------
+- Programming Language: Java
+- Documentation: MS Word
+- Project Management: Project Libre for scheduling and tracking progress
+- Version Control: Git and GitHub
+- Database: Firebase for managing event and user data
+- Server-Side Deployment: Apache
+
+2.3 Product Acceptance Plan
+---------------------------
+The EMS will be accepted when it:
+  - Allows creation, modification, and deletion of events by authorized users.
+  - Enables secure registration with confirmation for both students and faculty.
+  - Supports post-event updates (photos, news, ratings, and feedback).
+  - Implements a secure, role-based login system.
+
+-----------------------------------------------------
+
+3. Functional Requirements and Use Cases
+------------------------------------------
+
+3.1 Use Case: Event Completion
+--------------------------------
+Primary Actor: Admin (Event Organizer)
+Stakeholders:
+  - Student: Access event outcomes, news, photos, and provide feedback.
+  - Department: Maintain a documented record for future planning.
+  - Event Organizer: Officially mark events as completed and share updates.
+
+Preconditions:
+  - The event has taken place.
+  - The admin is logged into the system.
+
+Postconditions:
+  - The event status is updated to "Completed."
+  - Photos and news are uploaded and accessible.
+  - Rating and feedback features are enabled.
+
+Process:
+  1. The admin logs into the EMS.
+  2. Navigates to the event management section and selects an event to complete.
+  3. The system prompts for post-event details (summary, key highlights, photos).
+  4. The admin uploads the necessary details.
+  5. The event status is updated to "Completed."
+  6. Rating and feedback functionalities are activated for students and teachers.
+
+Alternate Flows:
+  - System Failure: Existing data is saved automatically and the system resumes from the last step upon recovery.
+  - Incomplete Details: The system allows partial submission and later updates.
+  - Upload Issues: If file uploads fail (e.g., due to size or format), the admin is notified to provide compatible files.
+
+3.2 Use Case: Student Registration
+------------------------------------
+Primary Actor: Student
+Stakeholders:
+  - Student: Register easily and view registration details.
+  - Department: Maintain an organized participant list.
+  - Event Organizer: Monitor registrations and control participant limits.
+
+Preconditions:
+  - The student is logged into the EMS.
+  - The event is open for registration.
+
+Postconditions:
+  - The student is registered for the event.
+  - The participant list is updated.
+
+Process:
+  1. The student logs in.
+  2. Navigates to the events section and selects an event.
+  3. Reviews event details and eligibility.
+  4. Confirms eligibility and submits registration.
+  5. Receives confirmation upon successful registration.
+
+Alternate Flows:
+  - System Failure: Registration data is saved and the process resumes automatically.
+  - Ineligibility: The system displays an error if the student does not meet the criteria.
+  - Full Capacity: If registration limits are reached, the student is notified and registration is halted.
+
+3.3 Use Case: Manage Event
+--------------------------
+Primary Actors: Students and Teachers
+Stakeholders:
+  - Students: Create, edit, and delete events they host.
+  - Teachers: Organize academic or extracurricular events with accurate details.
+
+Preconditions:
+  - The user is authenticated and has permission to manage events.
+
+Postconditions:
+  - Events are created, updated, or deleted as required.
+
+Process:
+  Creating an Event:
+    1. Navigate to "Manage Event."
+    2. Select "Create Event" and fill in event details (name, description, location, date, time).
+    3. Submit the form; the event is added to the event list.
+  Editing an Event:
+    1. Select an event to edit.
+    2. Modify details as needed and submit the changes; the event is updated.
+  Deleting an Event:
+    1. Select the event for deletion.
+    2. Confirm deletion; the event is removed.
+  Setting Event Requirements:
+    1. Choose "Set Event Requirements."
+    2. Update fields such as prerequisites, maximum participants, and required documents; the details are saved.
+
+Alternate Flows:
+  - Missing Details: The system prompts to complete required fields.
+  - Unauthorized Actions: Deletion or editing is denied if the user lacks proper permissions.
+
+3.4 Use Case: See Feed and Event Rating
+----------------------------------------
+Actors: Student and Teacher
+Stakeholders:
+  - Students & Teachers: Stay updated on events and provide feedback via ratings.
+  - Admin: Ensure that event-related content is available in the feed.
+
+Preconditions:
+  - The user is logged in.
+  - Event updates (news/photos) have been uploaded by the admin.
+
+Postconditions:
+  - The feed displays current event updates.
+  - User ratings are recorded and reflected in overall event feedback.
+
+Process:
+  1. The user logs in and navigates to the "See Feed" section.
+  2. The system displays available event updates (news/photos).
+  3. The user reviews the feed and submits ratings (e.g., stars, emojis).
+  4. The system saves the rating and updates the event’s overall score.
+
+Alternate Flows:
+  - No Updates Available: A message is shown (e.g., “No event updates available!”) and the rating option is disabled.
+  - Unauthorized Access: Non-logged-in users are redirected to the login page.
+  - Technical Issues: Appropriate error messages are displayed if problems occur during content retrieval or rating submission.
+
+-----------------------------------------------------
+
+4. Supporting Process Plans
+----------------------------
+4.1 Risk Management
+-------------------
+The project includes proactive risk management through the following measures:
+  - Risk Identification: Regular team sessions, stakeholder meetings, and historical data reviews identify potential technological, scheduling, personnel, and complexity risks.
+  - Risk Analysis: Risks are assessed using a risk matrix and prioritized as high, medium, or low.
+  - Mitigation Strategies:
+      * Technological: Regular code reviews, automated testing, and robust security measures.
+      * Scheduling/Budget: Use of Project Libre to track milestones and trigger resource reallocation if delays occur.
+      * Personnel: Cross-training team members and thorough documentation to mitigate knowledge loss.
+      * Complexity: Modular development and phased implementation to break down complex tasks.
+  - Monitoring: Maintaining a risk register, conducting weekly review meetings, and communicating updates to stakeholders.
+
+4.2 Schedule and Resource Allocation
+--------------------------------------
+A detailed Gantt chart and task network diagram outline the project phases, task sequences, and resource allocation. These visuals support effective project tracking and timely delivery of milestones.
+
+-----------------------------------------------------
+
+5. Documentation and Final Deliverables
+-----------------------------------------
+The final deliverables for the Event Hub project include:
+  - The fully functional Event Management System (EMS)
+  - A web-based user interface
+  - A well-structured database schema
+  - Post-event features (image uploads, ratings, feedback)
+  - Comprehensive documentation including the user manual, design documents, and test reports
+
+=====================================================
