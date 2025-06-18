@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+
+<VBox spacing="20" styleClass="gradient-bg" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eventmanagement.ConcludeEventController">
+    <Label text="Conclude Event" styleClass="title-text" />
+    <ChoiceBox fx:id="eventChoice" styleClass="input-field" />
+    <Slider fx:id="ratingSlider" styleClass="slider" />
+    <TextArea fx:id="feedbackField" promptText="Feedback" styleClass="input-field" prefHeight="100" />
+    <Button fx:id="submitButton" text="Submit Feedback" onAction="#handleSubmit" styleClass="primary-button" />
+</VBox>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" spacing="15" styleClass="gradient-bg" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eventmanagement.SignupController">
+    <Label text="Sign Up" styleClass="title-text" />
+    <TextField fx:id="usernameField" promptText="Username" styleClass="input-field" />
+    <TextField fx:id="emailField" promptText="Email" styleClass="input-field" />
+    <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field" />
+    <ChoiceBox fx:id="roleChoice" styleClass="input-field" />
+    <ChoiceBox fx:id="programChoice" styleClass="input-field" />
+    <ChoiceBox fx:id="semesterChoice" styleClass="input-field" />
+    <Button fx:id="signupButton" text="Sign Up" onAction="#handleSignup" styleClass="primary-button" />
+</VBox>

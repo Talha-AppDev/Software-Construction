@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox spacing="20" styleClass="gradient-bg" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eventmanagement.EventController">
+    <Label text="Event Management" styleClass="title-text" />
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="eventNameField" promptText="Event Name" styleClass="input-field" />
+        <TextArea fx:id="eventDescriptionField" promptText="Description" styleClass="input-field" prefHeight="60" />
+        <DatePicker fx:id="eventDatePicker" promptText="Date" styleClass="input-field" />
+    </HBox>
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="createButton" text="Create Event" onAction="#handleCreateEvent" styleClass="primary-button" />
+        <Button fx:id="updateButton" text="Update Event" onAction="#handleUpdateEvent" styleClass="primary-button" />
+        <Button fx:id="deleteButton" text="Delete Event" onAction="#handleDeleteEvent" styleClass="primary-button" />
+    </HBox>
+    <TableView fx:id="eventTable" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="200" />
+            <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="300" />
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100" />
+        </columns>
+    </TableView>
+</VBox>

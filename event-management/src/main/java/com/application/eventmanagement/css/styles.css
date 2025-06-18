@@ -1,0 +1,58 @@
+.gradient-bg {
+    -fx-background-color: linear-gradient(to bottom right, #4f46e5, #7c3aed);
+    -fx-padding: 20;
+}
+
+.title-text {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3);, 5, 0, 0, 2);
+}
+
+.input-field {
+    -fx-pref-width: 200px;
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: #d1d5db;
+    -fx-padding: 5;
+    -fx-font-family: "Poppins";
+}
+
+.primary-button {
+    -fx-background-color: #10b981;
+    -fx-text-fill: white;
+    -fx-font-family: "Poppins";
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2);, 5, 0, 0, 1);
+}
+
+.primary-button:hover {
+    -fx-background-color: #059669;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.table-view {
+    -fx-background-color: #d1d5db;
+    -fx-table-cell-border-color: #d1d5db;
+}
+
+.list-view {
+    -fx-color: white;
+    -fx-background-radius: #5;
+    -fx-border-color: #d1d5db;
+}
+
+.slider .track {
+    -fx-background-color #d1d5db;
+}
+
+.slider .thumb {
+    -fx-background-color: #10b981;
+}
+</style>

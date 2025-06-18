@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.application.eventmanagement.RegistrationController"
+      spacing="15"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 20;">
+    <Label text="Event Registration"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Select Event:" style="-fx-font-size: 14px; -fx-min-width: 100;"/>
+        <ChoiceBox fx:id="eventChoice" style="-fx-font-size: 14px; -fx-min-width: 200;"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Program:" style="-fx-font-size: 14px; -fx-min-width: 100;"/>
+        <ChoiceBox fx:id="programChoice" style="-fx-font-size: 14px; -fx-min-width: 200;"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Semester:" style="-fx-font-size: 14px; -fx-min-width: 100;"/>
+        <ChoiceBox fx:id="semesterChoice" style="-fx-font-size: 14px; -fx-min-width: 200;"/>
+    </HBox>
+
+    <Button fx:id="registerButton" text="Register" onAction="#handleRegister"
+            style="-fx-font-size: 14px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 8px 16px;"/>
+
+    <TableView fx:id="registrationTable" style="-fx-font-size: 14px; -fx-max-height: 200;">
+        <columns>
+            <TableColumn fx:id="eventColumn" text="Event" style="-fx-font-size: 14px;"/>
+            <TableColumn fx:id="programColumn" text="Program" style="-fx-font-size: 14px;"/>
+            <TableColumn fx:id="semesterColumn" text="Semester" style="-fx-font-size: 14px;"/>
+        </columns>
+    </TableView>
+
+    <Button fx:id="deleteButton" text="Delete Registration" onAction="#handleDeleteRegistration"
+            style="-fx-font-size: 14px; -fx-background-color: #F44336; -fx-text-fill: white; -fx-padding: 8px 16px;"/>
+</VBox>

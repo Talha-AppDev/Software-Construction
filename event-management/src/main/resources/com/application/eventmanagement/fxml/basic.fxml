@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.application.eventmanagement.BasicController"
+      alignment="CENTER"
+      spacing="20"
+      style="-fx-background-color: #f5f5f5;">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <Label text="Welcome to Event Management System"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+    <Button fx:id="loginButton" text="Login" onAction="#handleLoginButton"
+            style="-fx-font-size: 16px; -fx-min-width: 150px; -fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    <Button fx:id="signupButton" text="Sign Up" onAction="#handleSignupButton"
+            style="-fx-font-size: 16px; -fx-min-width: 150px; -fx-background-color: #2196F3; -fx-text-fill: white;"/>
+</VBox>

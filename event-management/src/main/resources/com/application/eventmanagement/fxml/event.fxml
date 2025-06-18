@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.time.LocalDate?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.application.eventmanagement.EventController"
+      alignment="TOP_CENTER"
+      spacing="20"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 30;">
+    <Label text="Manage Events"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333; -fx-padding: 0 0 20 0;"/>
+
+    <!-- Event Creation Form -->
+    <GridPane hgap="15" vgap="15" style="-fx-padding: 10;">
+        <Label text="Event Name:"
+               style="-fx-font-size: 14px; -fx-text-fill: #333333;"
+               GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField"
+                   style="-fx-font-size: 14px; -fx-min-width: 250px; -fx-padding: 8px;"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Date:"
+               style="-fx-font-size: 14px; -fx-text-fill: #333333;"
+               GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="datePicker"
+                    style="-fx-font-size: 14px; -fx-min-width: 250px;"
+                    GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Location:"
+               style="-fx-font-size: 14px; -fx-text-fill: #333333;"
+               GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="locationField"
+                   style="-fx-font-size: 14px; -fx-min-width: 250px; -fx-padding: 8px;"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Form Actions -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="createButton" text="Create Event" onAction="#handleCreateEvent"
+                style="-fx-font-size: 14px; -fx-min-width: 100px; -fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        <Button fx:id="updateButton" text="Update Event" onAction="#handleUpdateEvent"
+                style="-fx-font-size: 14px; -fx-min-width: 100px; -fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button fx:id="clearButton" text="Clear Form" onAction="#handleClearForm"
+                style="-fx-font-size: 14px; -fx-min-width: 100px; -fx-background-color: #607D8B; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Event Table -->
+    <TableView fx:id="eventTable" style="-fx-max-height: 200px;">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="nameColumn" text="Event Name" prefWidth="200"/>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="locationColumn" text="Location" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <!-- Table Actions -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="deleteButton" text="Delete Selected Event" onAction="#handleDeleteEvent"
+                style="-fx-font-size: 14px; -fx-min-width: 150px; -fx-background-color: #F44336; -fx-text-fill: white;"/>
+        <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBack"
+                style="-fx-font-size: 14px; -fx-min-width: 150px; -fx-background-color: #607D8B; -fx-text-fill: white;"/>
+    </HBox>
+</VBox>

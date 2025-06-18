@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.application.eventmanagement.ConcludeEventController"
+      spacing="15"
+      style="-fx-background-color: #f5f5f5; -fx-padding: 20;">
+    <Label text="Conclude Event"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Select Event:" style="-fx-font-size: 14px; -fx-min-width: 100;"/>
+        <ChoiceBox fx:id="eventChoice" style="-fx-font-size: 14px; -fx-min-width: 200;"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Rating:" style="-fx-font-size: 14px; -fx-min-width: 100;"/>
+        <Slider fx:id="ratingSlider" min="1" max="5" value="3"
+                style="-fx-min-width: 200;" showTickLabels="true" showTickMarks="true" majorTickUnit="1" minorTickCount="0" snapToTicks="true"/>
+    </HBox>
+
+    <Label text="Feedback:" style="-fx-font-size: 14px;"/>
+    <TextArea fx:id="feedbackField"
+              style="-fx-font-size: 14px; -fx-min-height: 100; -fx-background-color: white; -fx-border-color: #ddd;"/>
+
+    <Button fx:id="submitButton" text="Submit Feedback" onAction="#handleSubmit"
+            style="-fx-font-size: 14px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 8px 16px;"/>
+</VBox>
