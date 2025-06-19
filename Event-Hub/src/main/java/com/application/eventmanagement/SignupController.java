@@ -12,16 +12,16 @@ public class SignupController {
     @FXML private TextField usernameField;
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
-    @FXML private ChoiceBox<String> programChoice;
-    @FXML private ChoiceBox<Integer> semesterChoice;
+    // @FXML private ChoiceBox<String> programChoice;
+    // @FXML private ChoiceBox<Integer> semesterChoice;
     @FXML private Button signupButton;
     @FXML private Button backButton;
 
     @FXML
     private void initialize() {
-        programChoice.getItems().addAll("BS", "MPhil", "PhD");
-        programChoice.setValue("BS");
-        semesterChoice.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8);
+        // programChoice.getItems().addAll("BS", "MPhil", "PhD");
+        // programChoice.setValue("BS");
+        // semesterChoice.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8);
 
         // Real-time validation for username
         usernameField.textProperty().addListener((obs, oldValue, newValue) -> {
@@ -56,8 +56,8 @@ public class SignupController {
         String username = usernameField.getText().trim();
         String email = emailField.getText().trim();
         String password = passwordField.getText();
-        String program = programChoice.getValue();
-        Integer semester = semesterChoice.getValue();
+        String program = "";
+        Integer semester = 1;
 
         // Input validation
         if (username.isEmpty()) {
@@ -72,12 +72,9 @@ public class SignupController {
             showAlert("Invalid Password", "Password must be at least 8 characters with letters, numbers, and symbols.");
             return;
         }
-        if (program == null || semester == null) {
-            showAlert("Invalid Input", "Please select program and semester.");
-            return;
-        }
+        
 
-        // Create and store user (role is always "Student")
+
         User user = new User(username, email, password, "Student", program, semester);
         DataManager.getInstance().addUser(user);
 

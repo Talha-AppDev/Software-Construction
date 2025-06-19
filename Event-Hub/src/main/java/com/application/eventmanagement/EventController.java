@@ -48,6 +48,18 @@ public class EventController {
             return;
         }
 
+    datePicker.setDayCellFactory(picker -> new DateCell() {
+        @Override
+        public void updateItem(LocalDate date, boolean empty) {
+            super.updateItem(date, empty);
+
+            if (date.isBefore(LocalDate.now())) {
+                setDisable(true);
+                setStyle("-fx-background-color: #EEEEEE;");
+            }
+        }
+    });
+
         // Initialize table columns
         idColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getId()).asObject());
         nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));

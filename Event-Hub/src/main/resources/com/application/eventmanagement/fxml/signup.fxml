@@ -35,7 +35,7 @@
                        style="-fx-font-size: 14px; -fx-min-width: 250px; -fx-padding: 8px;"
                        GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-        <Label text="Program:"
+        <!-- <Label text="Program:"
                style="-fx-font-size: 14px; -fx-text-fill: #333333;"
                GridPane.rowIndex="3" GridPane.columnIndex="0"/>
         <ChoiceBox fx:id="programChoice"
@@ -47,7 +47,7 @@
                GridPane.rowIndex="4" GridPane.columnIndex="0"/>
         <ChoiceBox fx:id="semesterChoice"
                    style="-fx-font-size: 14px; -fx-min-width: 250px;"
-                   GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                   GridPane.rowIndex="4" GridPane.columnIndex="1"/> -->
     </GridPane>
 
     <HBox spacing="10" alignment="CENTER">

@@ -9,16 +9,23 @@
       fx:controller="com.application.eventmanagement.UploadMaterialController"
       spacing="15"
       style="-fx-background-color: #f5f5f5; -fx-padding: 20;">
+
     <Label text="Upload Materials"
            style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
 
-    <Button fx:id="uploadButton" text="Select Files"
-            style="-fx-font-size: 14px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 8px 16px;"/>
+    <ChoiceBox fx:id="eventChoice" />
+
+    <Button fx:id="uploadButton" text="Select Files" onAction="#handleUpload"
+            style="-fx-font-size: 14px; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 8px 16px;" />
 
     <ListView fx:id="fileListView"
               style="-fx-font-size: 14px; -fx-background-color: white; -fx-border-color: #ddd; -fx-pref-height: 200;">
         <placeholder>
-            <Label text="No files uploaded yet" style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+            <Label text="No files uploaded yet" style="-fx-font-size: 14px; -fx-text-fill: #666;" />
         </placeholder>
     </ListView>
+
+    <Button fx:id="backButton" text="Back" onAction="#handleBack"
+            style="-fx-font-size: 14px; -fx-background-color: #757575; -fx-text-fill: white; -fx-padding: 8px 16px;" />
+
 </VBox>

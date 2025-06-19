@@ -16,7 +16,6 @@ public class Main extends Application {
             // Initialize database connection
             DatabaseConnection.getConnection();
 
-            // Load the welcome screen
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/application/eventmanagement/fxml/basic.fxml"));
             Parent root = loader.load();
 
@@ -25,7 +24,7 @@ public class Main extends Application {
 
             primaryStage.setTitle("Event Management System - Welcome");
             primaryStage.setScene(scene);
-            primaryStage.setResizable(false); // Make window non-resizable for consistency
+            primaryStage.setResizable(false); 
             primaryStage.show();
         } catch (SQLException e) {
             System.err.println("Database connection failed: " + e.getMessage());

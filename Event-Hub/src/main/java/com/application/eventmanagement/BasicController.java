@@ -11,9 +11,9 @@ import java.io.IOException;
 
 public class BasicController {
     @FXML
-    private Button loginButton; // Injected from basic.fxml
+    private Button loginButton;
     @FXML
-    private Button signupButton; // Injected from basic.fxml
+    private Button signupButton;
 
     @FXML
     private void handleLoginButton() {
@@ -31,7 +31,7 @@ public class BasicController {
             stage.setResizable(false);
             stage.show();
 
-            // Close the current welcome window
+
             currentStage.close();
         } catch (IOException e) {
             e.printStackTrace();
